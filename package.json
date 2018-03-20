@@ -4,5 +4,9 @@
   "main": "index.js",
   "repository": "https://github.com/gaptree/gap-front-web",
   "author": "zhanjh <zhanjh@126.com>",
-  "license": "MIT"
+  "license": "MIT",
+  "devDependencies": {
+    "eslint": "^4.19.0",
+    "jest": "^22.4.2"
+  }
 }
