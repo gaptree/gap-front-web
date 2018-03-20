@@ -4,3 +4,5 @@ import './js/prototype/ElementAnimate.js';
 import './js/prototype/HTMLDocument.js';
 import './js/prototype/NodeList.js';
 import './js/prototype/Window.js';
+
+export {allElem, oneElem, ready} from './js/selector.js';
