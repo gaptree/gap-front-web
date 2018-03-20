@@ -4,9 +4,6 @@ const pt = Element.prototype;
 pt.allElem = pt.querySelectorAll;
 pt.oneElem = pt.querySelector;
 
-pt.s = pt.allElem; // deprecated
-pt.elem = pt.oneElem; //deprecated
-
 // remove
 pt.remove = function () {
     if (this.parentNode) {
