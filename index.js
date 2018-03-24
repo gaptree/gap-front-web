@@ -6,3 +6,7 @@ import './js/prototype/NodeList.js';
 import './js/prototype/Window.js';
 
 export {allElem, oneElem, ready} from './js/selector.js';
+
+export const createElem = (tagName) => {
+    return document.createElement(tagName);
+};
