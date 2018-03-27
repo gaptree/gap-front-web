@@ -72,3 +72,25 @@ pt.one = function(types, handler) {
     });
 };
 */
+
+pt.setVal = function(val) {
+    if (this.value === undefined) {
+        return;
+    }
+
+    this.value = val;
+
+    switch(this.tagName.toLowerCase()) {
+    case 'input':
+        this.setAttribute('value', val);
+        break;
+
+    case 'textarea':
+        this.innerHTML = val;
+        break;
+    }
+};
+
+pt.getVal = function() {
+    return this.value;
+};
