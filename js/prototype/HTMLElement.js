@@ -42,6 +42,6 @@ pt.html = function(strs, ...items) {
 
     this.innerHTML = tpl(strs, ...items);
     this.allElem('.elem-holder').forEach(
-        holder => holder.replaceWith(elems[parseInt(holder.value)])
+        holder => holder.replace(elems[parseInt(holder.value)])
     );
 };
