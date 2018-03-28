@@ -12,7 +12,7 @@ pt.remove = function () {
 };
 
 // replace with
-pt.replaceWith = function (elem) {
+pt.replace = function(elem) {
     if (!(elem instanceof HTMLElement)) {
         throw new Error('elem must be HTMLElement');
     }
@@ -74,9 +74,11 @@ pt.one = function(types, handler) {
 */
 
 pt.setVal = function(val) {
+    /*
     if (this.value === undefined) {
         return;
     }
+    */
 
     this.value = val;
 
@@ -85,9 +87,13 @@ pt.setVal = function(val) {
         this.setAttribute('value', val);
         break;
 
-    case 'textarea':
-        this.innerHTML = val;
+    case 'select':
+        this.oneElem(`option[value="${val}"]`).selected = true;
         break;
+
+    case 'textarea':
+    default:
+        this.innerHTML = val;
     }
 };
 
