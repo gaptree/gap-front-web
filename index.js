@@ -6,8 +6,11 @@ import './js/prototype/HTMLElement.js';
 import './js/prototype/NodeList.js';
 import './js/prototype/Window.js';
 
-export {allElem, oneElem, ready} from './js/selector.js';
+export {allElem, oneElem} from './js/selector.js';
 
 export const createElem = (tagName) => {
     return document.createElement(tagName);
 };
+
+export const ready = (fun) => document.ready(fun);
+export {Loader} from './Loader.js';
