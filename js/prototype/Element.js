@@ -49,21 +49,6 @@ pt.on = function(types, handler, useCapture) {
     return this;
 };
 
-pt.stop = function() {
-    if (this.stopPropagation) {
-        this.stopPropagation();
-    }
-    this.cancelBubble = true;
-};
-
-pt.cancel = function() {
-    if (this.preventDefault) {
-        this.preventDefault();
-    } else {
-        this.returnValue =false;
-    }
-};
-
 /*
 Not support by Edge, ie ..
 pt.one = function(types, handler) {
