@@ -15,3 +15,4 @@ export const createElem = (tagName) => {
 
 export const ready = (fun) => document.ready(fun);
 export {Loader} from './js/Loader.js';
+export {toFormData} from './js/toFormData.js';
