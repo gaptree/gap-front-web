@@ -10,23 +10,27 @@ const tpl = (strs, ...items) => {
 
     items.forEach((item, index) => {
         const str = raw[index];
-        if (Array.isArray(item)) {
-            item = item.join('');
-        }
-        if (item instanceof HTMLElement) {
-            item = createHolder(item);
-        }
-
-        if (!item) {
-            item = '';
-        }
 
         res += str;
-        res += item;
+        res += parseItem(item);
     });
 
     res += raw[raw.length - 1];
     return res.replace(/\s+/g, ' ').trim();
+};
+
+const parseItem = (item) => {
+    if (Array.isArray(item)) {
+        item = item.map(sub => parseItem(sub))
+            .join('');
+    }
+    if (item instanceof HTMLElement) {
+        item = createHolder(item);
+    }
+    if (!item) {
+        item = '';
+    }
+    return item;
 };
 
 const createHolder = (elem) => {
