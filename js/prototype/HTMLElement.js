@@ -27,6 +27,9 @@ const parseItem = (item) => {
     if (item instanceof HTMLElement) {
         item = createHolder(item);
     }
+    if (item && item.ctn instanceof HTMLElement) {
+        item = createHolder(item.ctn);
+    }
     if (!item) {
         item = '';
     }
