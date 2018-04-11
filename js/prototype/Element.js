@@ -65,6 +65,10 @@ pt.setVal = function(val) {
     }
     */
 
+    if (val === undefined) {
+        return;
+    }
+
     this.value = val;
 
     switch(this.tagName.toLowerCase()) {
