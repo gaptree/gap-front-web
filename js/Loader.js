@@ -1,11 +1,11 @@
-import {Event} from 'gap-front-event';
+import {GapEvent} from 'gap-front-event';
 import {allElem} from './selector.js';
 
 const EventName = 'gap-load';
 
 export class Loader {
     constructor() {
-        this.event = new Event();
+        this.event = new GapEvent();
 
         document.ready(() => {
             this.load();
