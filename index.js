@@ -1,4 +1,5 @@
 import './js/prototype/Element.js';
+import './js/prototype/ElementEvent.js';
 import './js/prototype/ElementCss.js';
 import './js/prototype/ElementAnimate.js';
 import './js/prototype/Event.js';

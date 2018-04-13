@@ -36,19 +36,6 @@ pt.hide = function() {
     this.style.display = 'none';
 };
 
-// event
-// https://developer.mozilla.org/en-US/docs/Web/API/EventTarget/addEventListener
-pt.on = function(types, handler, useCapture) {
-    types.split(' ').map(type => {
-        if (this.addEventListener) {
-            this.addEventListener(type, handler, useCapture);
-        } else if (this.attachEvent) {
-            this.attachEvent('on' + type, handler);
-        }
-    });
-    return this;
-};
-
 /*
 Not support by Edge, ie ..
 pt.one = function(types, handler) {
