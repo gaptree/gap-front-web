@@ -20,22 +20,19 @@ const tpl = (strs, ...items) => {
 };
 
 const parseItem = (item) => {
+    let str = '';
     if (Array.isArray(item)) {
-        item = item.map(sub => parseItem(sub))
+        str = item.map(sub => parseItem(sub))
             .join('');
+    } else if (item) {
+        if (item instanceof Node) {
+            str = createHolder(item);
+        } else if (item.elem instanceof Node) {
+            str = createHolder(item.elem);
+        }
     }
-    if (item instanceof Node) {
-        item = createHolder(item);
-    }
-    /*
-    if (item && item.ctn instanceof HTMLElement) {
-        item = createHolder(item.ctn);
-    }
-    */
-    if (!item) {
-        item = '';
-    }
-    return item;
+
+    return str;
 };
 
 const createHolder = (elem) => {
