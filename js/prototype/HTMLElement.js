@@ -24,12 +24,14 @@ const parseItem = (item) => {
         item = item.map(sub => parseItem(sub))
             .join('');
     }
-    if (item instanceof HTMLElement) {
+    if (item instanceof Node) {
         item = createHolder(item);
     }
+    /*
     if (item && item.ctn instanceof HTMLElement) {
         item = createHolder(item.ctn);
     }
+    */
     if (!item) {
         item = '';
     }
@@ -38,7 +40,7 @@ const parseItem = (item) => {
 
 const createHolder = (elem) => {
     elems[index] = elem;
-    const html = `<input type="hidden" class="elem-holder" value="${index}">`;
+    const html = `<input type="hidden" class="gap-node-holder" value="${index}">`;
     index++;
     return html;
 };
@@ -48,7 +50,7 @@ pt.html = function(strs, ...items) {
     elems = [];
 
     this.innerHTML = tpl(strs, ...items);
-    this.allElem('.elem-holder').forEach(
+    this.allElem('.gap-node-holder').forEach(
         holder => holder.replace(elems[parseInt(holder.value)])
     );
 };
