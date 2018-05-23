@@ -5,6 +5,7 @@ import './js/prototype/ElementAnimate.js';
 import './js/prototype/Event.js';
 import './js/prototype/HTMLDocument.js';
 import './js/prototype/HTMLElement.js';
+import './js/prototype/Node.js';
 import './js/prototype/NodeList.js';
 import './js/prototype/Window.js';
 

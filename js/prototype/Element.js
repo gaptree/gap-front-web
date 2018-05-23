@@ -11,17 +11,6 @@ pt.remove = function () {
     }
 };
 
-// replace with
-pt.replace = function(elem) {
-    if (!(elem instanceof HTMLElement)) {
-        throw new Error('elem must be HTMLElement');
-    }
-    if (!this.parentNode) {
-        throw new Error('cannot find parentNode');
-    }
-
-    this.parentNode.replaceChild(elem, this);
-};
 
 // show
 pt.show = function() {
