@@ -11,3 +11,11 @@ pt.replace = function(node) {
 
     this.parentNode.replaceChild(node, this);
 };
+
+// remove
+pt.remove = function () {
+    if (this.parentNode) {
+        this.parentNode.removeChild(this);
+    }
+};
+

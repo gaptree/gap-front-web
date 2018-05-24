@@ -4,13 +4,6 @@ const pt = Element.prototype;
 pt.allElem = pt.querySelectorAll;
 pt.oneElem = pt.querySelector;
 
-// remove
-pt.remove = function () {
-    if (this.parentNode) {
-        this.parentNode.removeChild(this);
-    }
-};
-
 
 // show
 pt.show = function() {
