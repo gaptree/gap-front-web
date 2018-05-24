@@ -29,6 +29,8 @@ const parseItem = (item) => {
             str = createHolder(item);
         } else if (item.elem instanceof Node) {
             str = createHolder(item.elem);
+        } else if (item.frag instanceof Node) {
+            str = createHolder(item.frag);
         } else {
             str = item;
         }
