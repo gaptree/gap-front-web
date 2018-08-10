@@ -25,12 +25,14 @@ const parseItem = (item) => {
         str = item.map(sub => parseItem(sub))
             .join('');
     } else if (item) {
+
         if (item instanceof Node) {
             str = createHolder(item);
-        } else if (item.elem instanceof Node) {
-            str = createHolder(item.elem);
-        } else if (item.frag instanceof Node) {
-            str = createHolder(item.frag);
+        } else if (item.ctn instanceof Node) {
+            if (item.compileTpl) {
+                item.compileTpl();
+            }
+            str = createHolder(item.ctn);
         } else {
             str = item;
         }
