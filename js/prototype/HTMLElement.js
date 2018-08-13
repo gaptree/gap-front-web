@@ -29,8 +29,9 @@ const parseItem = (item) => {
         if (item instanceof Node) {
             str = createHolder(item);
         } else if (item.ctn instanceof Node) {
-            if (item.compileTpl) {
-                item.compileTpl();
+            // todo
+            if (item.bindTpl) {
+                item.bindTpl();
             }
             str = createHolder(item.ctn);
         } else {
