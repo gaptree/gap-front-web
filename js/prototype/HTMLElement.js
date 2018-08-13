@@ -28,12 +28,8 @@ const parseItem = (item) => {
 
         if (item instanceof Node) {
             str = createHolder(item);
-        } else if (item.ctn instanceof Node) {
-            // todo
-            if (item.bindTpl) {
-                item.bindTpl();
-            }
-            str = createHolder(item.ctn);
+        } else if (item.getBindedCtn) {
+            str = createHolder(item.getBindedCtn());
         } else {
             str = item;
         }
