@@ -30,6 +30,8 @@ const parseItem = (item) => {
             str = createHolder(item);
         } else if (item.getBindedCtn) {
             str = createHolder(item.getBindedCtn());
+        } else if (item.ctn) {
+            str = createHolder(item.ctn);
         } else {
             str = item;
         }
