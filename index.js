@@ -12,7 +12,7 @@ import './js/prototype/Window.js';
 export {allElem, oneElem} from './js/selector.js';
 
 export const createElem = (tagName) => {
-    return document.createElement(tagName);
+  return document.createElement(tagName);
 };
 
 export const ready = (fun) => document.ready(fun);

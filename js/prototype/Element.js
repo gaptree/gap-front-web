@@ -7,15 +7,15 @@ pt.oneElem = pt.querySelector;
 
 // show
 pt.show = function() {
-    // todo
-    // if element default display is inline, like `span`
-    //this.style.display = 'block';
-    this.style.display = null;
+  // todo
+  // if element default display is inline, like `span`
+  //this.style.display = 'block';
+  this.style.display = null;
 };
 
 // hide
 pt.hide = function() {
-    this.style.display = 'none';
+  this.style.display = 'none';
 };
 
 /*
@@ -28,33 +28,33 @@ pt.one = function(types, handler) {
 */
 
 pt.setVal = function(val) {
-    /*
+  /*
     if (this.value === undefined) {
         return;
     }
     */
 
-    if (val === undefined) {
-        return;
-    }
+  if (val === undefined) {
+    return;
+  }
 
-    this.value = val;
+  this.value = val;
 
-    switch(this.tagName.toLowerCase()) {
-    case 'input':
-        this.setAttribute('value', val);
-        break;
+  switch(this.tagName.toLowerCase()) {
+  case 'input':
+    this.setAttribute('value', val);
+    break;
 
-    case 'select':
-        this.oneElem(`option[value="${val}"]`).selected = true;
-        break;
+  case 'select':
+    this.oneElem(`option[value="${val}"]`).selected = true;
+    break;
 
-    case 'textarea':
-    default:
-        this.innerHTML = val;
-    }
+  case 'textarea':
+  default:
+    this.innerHTML = val;
+  }
 };
 
 pt.getVal = function() {
-    return this.value;
+  return this.value;
 };
