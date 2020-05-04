@@ -1,6 +1,6 @@
 const pt = Element.prototype;
 
-pt.hasClass = function (className) {
+pt.hasClass = function hasClass(className) {
   let arr;
   if (!className) {
     return false;
@@ -11,21 +11,23 @@ pt.hasClass = function (className) {
       return this.classList.contains(className);
     }
 
-    for (let i in arr) {
+    // eslint-disable-next-line
+    for (const i in arr) {
       if (!this.classList.contains(arr[i])) {
         return false;
       }
     }
 
     return true;
-  } else if (this.className) {
+  }
+  if (this.className) {
     // todo
-    return (new RegExp('(^| )' + className + '( |$)', 'gi')).test(this.className);
+    return new RegExp(`(^| )${className}( |$)`, 'gi').test(this.className);
   }
 
   return false;
 };
-pt.removeClass = function (className) {
+pt.removeClass = function removeClass(className) {
   let arr;
   if (this.classList) {
     arr = className.split(' ');
@@ -36,10 +38,13 @@ pt.removeClass = function (className) {
     }
   } else if (this.className) {
     // todo
-    this.className = this.className.replace(new RegExp('(^|\\b)' + className.split(' ').join('|') + '(\\b|$)', 'gi'), ' ');
+    this.className = this.className.replace(
+      new RegExp(`(^|\\b)${className.split(' ').join('|')}(\\b|$)`, 'gi'),
+      ' '
+    );
   }
 };
-pt.addClass = function (className) {
+pt.addClass = function addClass(className) {
   let arr;
   if (!className) {
     return;
@@ -52,26 +57,22 @@ pt.addClass = function (className) {
     if (arr.length === 1) {
       this.classList.add(className);
     } else {
-      arr.forEach((item)  => this.addClass(item));
+      arr.forEach((item) => this.addClass(item));
     }
+  } else if (this.className) {
+    this.className += ` ${className}`;
   } else {
-    if (this.className) {
-      this.className += ' ' + className;
-    } else {
-      this.className = className;
-    }
+    this.className = className;
   }
 };
-pt.toggleClass = function (className) {
+pt.toggleClass = function toggleClass(className) {
   className.split(' ').forEach((item) => {
     if (this.classList) {
       this.classList.toggle(item);
+    } else if (this.hasClass(item)) {
+      this.removeClass(item);
     } else {
-      if (this.hasClass(item)) {
-        this.removeClass(item);
-      } else {
-        this.addClass(item);
-      }
+      this.addClass(item);
     }
   });
 };

@@ -1,4 +1,6 @@
-import {allElem, oneElem} from '../index.js';
+import { allElem, oneElem } from '..';
+
+const RADIX = 10;
 
 test('allElem & oneElem', () => {
   let count = 0;
@@ -8,10 +10,10 @@ test('allElem & oneElem', () => {
     <div class="query">2</div>
   `;
 
-  allElem('.query').map(elem => {
-    count++;
-    expect(parseInt(elem.innerHTML)).toBe(count);
+  allElem('.query').forEach((elem) => {
+    count += 1;
+    expect(parseInt(elem.innerHTML, RADIX)).toBe(count);
   });
 
-  expect(parseInt(oneElem('.query').innerHTML)).toBe(1);
+  expect(parseInt(oneElem('.query').innerHTML, RADIX)).toBe(1);
 });

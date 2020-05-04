@@ -1,20 +1,20 @@
-import './js/prototype/Element.js';
-import './js/prototype/ElementEvent.js';
-import './js/prototype/ElementCss.js';
-import './js/prototype/ElementAnimate.js';
-import './js/prototype/Event.js';
-import './js/prototype/HTMLDocument.js';
-import './js/prototype/HTMLElement.js';
-import './js/prototype/Node.js';
-import './js/prototype/NodeList.js';
-import './js/prototype/Window.js';
+import './js/prototype/Element';
+import './js/prototype/ElementEvent';
+import './js/prototype/ElementCss';
+import './js/prototype/ElementAnimate';
+import './js/prototype/Event';
+import './js/prototype/HTMLDocument';
+import './js/prototype/HTMLElement';
+import './js/prototype/Node';
+import './js/prototype/NodeList';
+import './js/prototype/Window';
 
-export {allElem, oneElem} from './js/selector.js';
+import createElem from './js/createElem';
+import ready from './js/ready';
+import Loader from './js/Loader';
+import toFormData from './js/toFormData';
+import Component from './js/Component';
 
-export const createElem = (tagName) => {
-  return document.createElement(tagName);
-};
+export { allElem, oneElem } from './js/selector';
 
-export const ready = (fun) => document.ready(fun);
-export {Loader} from './js/Loader.js';
-export {toFormData} from './js/toFormData.js';
+export { createElem, ready, Loader, toFormData, Component };

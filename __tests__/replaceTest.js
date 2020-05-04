@@ -1,4 +1,4 @@
-import {oneElem, createElem} from '../index.js';
+import { oneElem, createElem } from '..';
 
 test('replace', () => {
   document.body.innerHTML = '<div><span id="span"></span></div>';

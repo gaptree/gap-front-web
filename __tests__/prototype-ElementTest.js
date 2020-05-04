@@ -1,4 +1,4 @@
-import '../index.js';
+import '..';
 
 test('selector', () => {
   document.body.innerHTML = `

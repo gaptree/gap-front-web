@@ -1,9 +1,9 @@
-import {GapEvent} from 'gap-front-event';
-import {allElem} from './selector.js';
+import { GapEvent } from 'gap-front-event';
+import { allElem } from './selector';
 
 const EventName = 'gap-load';
 
-export class Loader {
+class Loader {
   constructor() {
     this.event = new GapEvent();
 
@@ -17,8 +17,10 @@ export class Loader {
   }
 
   load() {
-    allElem('[' + EventName+ ']').forEach(elem => {
+    allElem(`[${EventName}]`).forEach((elem) => {
       this.event.trigger(EventName, elem);
     });
   }
 }
+
+export default Loader;

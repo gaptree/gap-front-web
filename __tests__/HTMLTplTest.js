@@ -1,4 +1,4 @@
-import {oneElem, createElem} from '../index.js';
+import { oneElem, createElem } from '..';
 
 test('html tpl', () => {
   document.body.innerHTML = `
@@ -10,18 +10,16 @@ test('html tpl', () => {
     createElem('div'),
     createElem('p'),
     '<ul>',
-    [
-      createElem('li'),
-      createElem('li')
-    ],
-    '</ul>'
+    [createElem('li'), createElem('li')],
+    '</ul>',
   ];
 
+  // eslint-disable-next-line
   elem.html`
-        <p>hell world</p>
-        ${childArr}
-        <input>
-    `;
+    <p>hell world</p>
+    ${childArr}
+    <input>
+  `;
 
   expect(elem.innerHTML).toBe(
     '<p>hell world</p> <div></div><p></p><ul><li></li><li></li></ul> <input>'

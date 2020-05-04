@@ -1,7 +1,7 @@
 const pt = Node.prototype;
 
 // replace with
-pt.replace = function(node) {
+pt.replace = function replace(node) {
   if (!(node instanceof Node)) {
     throw new Error('node must be Node');
   }
@@ -13,9 +13,8 @@ pt.replace = function(node) {
 };
 
 // remove
-pt.remove = function () {
+pt.remove = function remove() {
   if (this.parentNode) {
     this.parentNode.removeChild(this);
   }
 };
-
